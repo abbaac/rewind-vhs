@@ -8,7 +8,6 @@ const trending_ids = [
     "tt1630029", // Avatar: The Way of Water (2022)
     "tt9764362", // The Menu (2022)
 ]
-
 const featured_ids = [
     "tt1375666", // Inception (2010)
     "tt0111161", // The Shawshank Redemption (1994)
@@ -31,7 +30,6 @@ const featured_ids = [
     "tt0080684", // Star Wars: The Empire Strikes Back (1980)
     "tt0172495", // Gladiator (2000)
 ]
-
 const new_arrivals = [
     "tt15398776", // Wonka (2023)
     "tt9362722", // Godzilla x Kong: The New Empire (2024)
@@ -54,7 +52,6 @@ const new_arrivals = [
     "tt15398776", // Wonka (2023)
     "tt13833688", // The Flash (2023)
 ]
-
 const top_rated = [
     "tt0111161", // The Shawshank Redemption (1994)
     "tt0068646", // The Godfather (1972)

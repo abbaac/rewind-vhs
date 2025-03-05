@@ -90,7 +90,7 @@ function TrendingCarousel({ movies }) {
                     <div className="flex space-x-10 text-base xl:text-lg">
                         {imdbRating && (
                             <div className="flex space-x-2">
-                                <img src={imdb_logo} size />
+                                <img src={imdb_logo} />
                                 <span> {imdbRating}</span>
                             </div>
                         )}
