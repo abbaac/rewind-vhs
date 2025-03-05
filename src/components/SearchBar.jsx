@@ -56,7 +56,7 @@ function SearchBar() {
     }, [searchQuery])
 
     return (
-        <div className="h-full w-52 xl:relative xl:w-[525px]">
+        <div className="h-full w-52 xl:relative xl:h-9 xl:w-[525px]">
             <div
                 className={`flex h-full w-full cursor-text flex-row items-center space-x-1 xl:space-x-2 xl:border-2 xl:px-2.5 xl:py-1 ${
                     displayResults ? "xl:rounded-t-md" : "xl:rounded-md"
@@ -67,10 +67,10 @@ function SearchBar() {
                         onClick={() => {
                             setSearchQuery("")
                         }}
-                        className="cursor-pointer"
+                        className="h-full cursor-pointer xl:size-6"
                     />
                 ) : (
-                    <HiOutlineSearch className="h-full xl:size-12" />
+                    <HiOutlineSearch className="h-full xl:size-6" />
                 )}
                 <input
                     placeholder="What are you watching?"
@@ -82,7 +82,7 @@ function SearchBar() {
                 />
             </div>
             {displayResults && (
-                <div className="absolute top-0 left-0 mt-14 flex h-fit max-h-80 w-full flex-col divide-y-2 divide-black overflow-y-auto rounded-b-md border-x-2 border-b-2 border-white bg-gray-100 text-black xl:mt-0 xl:max-h-96">
+                <div className="absolute top-0 left-0 mt-14 flex h-fit max-h-80 w-full flex-col divide-y-2 divide-black overflow-y-auto rounded-b-md border-x-2 border-b-2 border-white bg-gray-100 text-black xl:mt-0 xl:mt-9 xl:max-h-96">
                     {isLoading && (
                         <div className="flex h-fit w-full shrink-0 flex-row p-2">
                             <span> Loading</span>

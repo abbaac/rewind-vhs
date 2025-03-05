@@ -126,12 +126,6 @@ function MoviePreview() {
                                             <span>{rottenTomatoesRating}</span>
                                         </div>
                                     )}
-                                    {/* {metacriticRating && (
-                                        <div className="flex h-full space-x-2">
-                                            <img src={metacritic_logo} />
-                                            <span>{metacriticRating}</span>
-                                        </div>
-                                    )} */}
                                 </div>
                             )}
                             <div>
@@ -150,18 +144,18 @@ function MoviePreview() {
                 </div>
             </div>
 
-            {/* <div className="flex flex-col space-y-4 px-24 py-4">
-                <div className="flex h-full flex-row justify-between">
-                    <div className="flex w-fit flex-col space-y-2">
-                        <div className="flex flex-col space-y-2">
-                            <span className="font mb-3 text-3xl font-bold">
+            <div className="flex w-full flex-col space-y-4 px-4 py-4 xl:px-24">
+                <div className="flex h-full w-full flex-row justify-between xl:flex-row">
+                    <div className="flex w-3/5 flex-col space-y-4">
+                        <div className="flex w-full flex-col space-y-2">
+                            <span className="font mb-3 font-bold xl:text-3xl">
                                 Popular Cast Members
                             </span>
-                            <div className="flex flex-row space-x-4">
+                            <div className="flex w-full flex-row space-x-2 overflow-x-auto">
                                 {Actors?.split(",").map((actor, index) => (
                                     <div
                                         key={index}
-                                        className="flex h-60 w-40 flex-col justify-between rounded-lg shadow-xl"
+                                        className="flex h-44 w-26 shrink-0 flex-col rounded-lg shadow-xl xl:h-60 xl:w-40"
                                     >
                                         <div
                                             className="h-3/4 rounded-t-md"
@@ -180,7 +174,7 @@ function MoviePreview() {
                                                       }
                                             }
                                         ></div>
-                                        <div className="p-2">
+                                        <div className="p-2 text-xs xl:text-base">
                                             <div className="line-clamp-1 font-bold">
                                                 {actor.trim()}
                                             </div>
@@ -190,7 +184,8 @@ function MoviePreview() {
                                 ))}
                             </div>
                         </div>
-                        <div className="flex flex-col space-y-2">
+
+                        <div className="flex flex-col space-y-2 text-xs xl:text-base">
                             <span className="font-bold">
                                 Director:{" "}
                                 <span className="font-medium">{Director}</span>
@@ -199,63 +194,107 @@ function MoviePreview() {
                                 Writer:{" "}
                                 <span className="font-medium">{Writer}</span>
                             </span>
-                            <span className="font-bold">
+                            <span className="w-1/2 font-bold text-wrap xl:w-full">
                                 Awards:{" "}
                                 <span className="font-medium">{Awards}</span>
                             </span>
                         </div>
                     </div>
-                    <div className="w-0.5 bg-black"></div>
-                    <div className="flex w-fit flex-col space-y-2">
-                        <span className="font mb-3 text-3xl font-bold">
+
+                    <div className="flex w-2/5 flex-col items-end space-y-2">
+                        <span className="font mb-3 font-bold xl:text-3xl">
                             Media Details
                         </span>
-                        <div className="flex flex-col">
+
+                        <div className="flex w-full flex-col items-end text-xs xl:text-base">
                             <span className="font-bold">Runtime</span>
-                            <span className="font-medium text-gray-500">
+                            <span className="w-full text-right font-medium text-gray-500">
                                 {Runtime}
                             </span>
                         </div>
-                        <div className="flex flex-col">
+
+                        <div className="flex w-full flex-col items-end text-xs xl:text-base">
                             <span className="font-bold">Rated</span>
-                            <span className="font-medium text-gray-500">
+                            <span className="w-full text-right font-medium text-gray-500">
                                 {Rated}
                             </span>
                         </div>
-                        <div className="flex flex-col">
+
+                        <div className="flex w-full flex-col items-end text-xs xl:text-base">
                             <span className="font-bold">Genre</span>
-                            <span className="font-medium text-gray-500">
+                            <span className="w-full text-right font-medium text-gray-500">
                                 {Genre}
                             </span>
                         </div>
-                        <div className="flex flex-col">
+
+                        <div className="flex w-full flex-col items-end text-xs xl:text-base">
                             <span className="font-bold">Language</span>
-                            <span className="font-medium text-gray-500">
+                            <span className="w-full text-right font-medium text-gray-500">
                                 {Language}
                             </span>
                         </div>
-                        <div className="flex flex-col">
+
+                        <div className="flex w-full flex-col items-end text-xs xl:text-base">
                             <span className="font-bold">Released</span>
-                            <span className="font-medium text-gray-500">
+                            <span className="w-full text-right font-medium text-gray-500">
                                 {Released}
                             </span>
                         </div>
-                        <div className="flex flex-col">
+
+                        <div className="flex w-full flex-col items-end text-xs xl:text-base">
                             <span className="font-bold">Country</span>
-                            <span className="font-medium text-gray-500">
+                            <span className="w-full text-right font-medium text-gray-500">
                                 {Country}
                             </span>
                         </div>
                     </div>
-                    <div className="w-0.5 bg-black"></div>
+                </div>
 
-                    <NavLink className="flex w-fit flex-col space-y-2">
-                        <span className="font mb-3 text-3xl font-bold">
-                            Similar Recommendations
+                <div className="flex w-full flex-col gap-y-4 xl:flex-row">
+                    <div className="space-y-4 xl:w-2/3">
+                        <div>
+                            <span className="font w-full font-bold xl:text-3xl">
+                                Reviews{" "}
+                            </span>
+                        </div>
+                        <div className="space-y-2 xl:space-y-4">
+                            {Array.from({ length: 3 }, (_, i) => (
+                                <div className="flex w-full flex-col space-y-2 overflow-auto p-1 text-xs shadow-lg xl:h-32 xl:p-4 xl:text-base">
+                                    <div className="flex flex-row space-x-1.5">
+                                        <span className="font-bold">
+                                            John Doe
+                                        </span>
+                                        <span className="flex flex-row items-center">
+                                            {Array.from(
+                                                { length: 5 },
+                                                (_, i) => (
+                                                    <HiOutlineStar
+                                                        fill="gold"
+                                                        key={i}
+                                                    />
+                                                )
+                                            )}
+                                        </span>
+                                    </div>
+                                    <span>
+                                        "Absolutely loved this movie! The
+                                        storytelling was top-notch, and the
+                                        performances were incredible. The
+                                        cinematography was stunning, and every
+                                        scene kept me engaged. Definitely a
+                                        must-watch!"
+                                    </span>
+                                </div>
+                            ))}
+                        </div>
+                    </div>
+                    <div className="flex w-full flex-col space-y-4 xl:w-1/3 xl:items-end">
+                        <span className="font mb-3 w-fit font-bold xl:text-3xl">
+                            Recommendations
                         </span>
                         {Array.from({ length: 3 }, (_, i) => (
-                            <div
-                                className="flex h-32 w-96 flex-col justify-between rounded-lg p-4 shadow-md"
+                            <NavLink
+                                className="flex h-20 w-full flex-col justify-around rounded-lg p-4 shadow-md xl:h-32 xl:w-96"
                                 style={
                                     Poster !== "N/A"
                                         ? {
@@ -266,12 +305,12 @@ function MoviePreview() {
                                         : { backgroundColor: "gray" }
                                 }
                             >
-                                <div className="w-full text-lg font-bold text-white">
+                                <div className="w-full text-sm font-bold text-white xl:text-xl">
                                     {Title} ({Year})
                                 </div>
                                 <div>
                                     {(imdbRating || rottenTomatoesRating) && (
-                                        <div className="flex w-full space-x-5 font-medium text-white">
+                                        <div className="flex w-full space-x-5 text-xs font-medium text-white xl:text-lg">
                                             {imdbRating && (
                                                 <div className="flex space-x-2">
                                                     <img src={imdb_logo} />
@@ -293,43 +332,11 @@ function MoviePreview() {
                                         </div>
                                     )}
                                 </div>
-                            </div>
-                        ))}
-                    </NavLink>
-                </div>
-
-                <div className="w-full space-y-4">
-                    <div>
-                        <span className="font w-full text-3xl font-bold">
-                            Reviews{" "}
-                        </span>
-                    </div>
-                    <div className="space-y-4">
-                        {Array.from({ length: 3 }, (_, i) => (
-                            <div className="flex h-32 w-full flex-col space-y-2 p-4 shadow-lg">
-                                <div className="flex flex-row space-x-1.5">
-                                    <span className="font-bold">John Doe</span>
-                                    <span className="flex flex-row items-center">
-                                        {Array.from({ length: 5 }, (_, i) => (
-                                            <HiOutlineStar
-                                                fill="gold"
-                                                key={i}
-                                            />
-                                        ))}
-                                    </span>
-                                </div>
-                                <span>
-                                    "Absolutely loved this movie! The
-                                    storytelling was top-notch, and the
-                                    performances were incredible. The
-                                    cinematography was stunning, and every scene
-                                    kept me engaged. Definitely a must-watch!"
-                                </span>
-                            </div>
+                            </NavLink>
                         ))}
                     </div>
                 </div>
-            </div> */}
+            </div>
         </div>
     )
 }
