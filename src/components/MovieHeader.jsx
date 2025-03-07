@@ -47,10 +47,10 @@ function MovieHeader({ Movie, ratings }) {
                         <span className="text-base font-bold xl:text-5xl">
                             {Title} ({Year})
                         </span>
-                        <div className="xl flex flex-row text-xs">
+                        <div className="flex flex-row text-sm xl:text-2xl">
                             <span className="font-bold capitalize">
                                 {Type}
-                                {totalSeasons && `• ${totalSeasons} seasons`}
+                                {totalSeasons && ` • ${totalSeasons} seasons`}
                             </span>
                         </div>
                         {(imdbRating || rottenTomatoesRating) && (
@@ -70,7 +70,9 @@ function MovieHeader({ Movie, ratings }) {
                             </div>
                         )}
                         <div>
-                            <span className="text-xs font-medium">{Plot}</span>
+                            <span className="text-xs font-medium xl:text-base">
+                                {Plot}
+                            </span>
                         </div>
                         <button className="flex h-5 w-fit cursor-pointer flex-row items-center justify-between space-x-2 rounded-sm bg-rose-700 px-2 py-1 xl:h-9 xl:rounded-md xl:px-4 xl:py-1.5">
                             <img src={play_icon} className="h-full"></img>
