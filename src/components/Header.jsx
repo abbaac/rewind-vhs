@@ -2,10 +2,6 @@ import SearchBar from "./SearchBar"
 import Logo from "../../public/tv.svg"
 import { NavLink } from "react-router-dom"
 
-function AccountSettings() {
-    return <div>account</div>
-}
-
 function Header() {
     return (
         <header className="absolute flex h-14 w-full flex-row items-center justify-between border-b-2 px-4 py-3.5 text-white xl:h-20 xl:border-b-0 xl:px-24 xl:py-7">
