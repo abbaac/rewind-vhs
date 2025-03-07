@@ -16,7 +16,7 @@ function Movie({ movie }) {
             try {
                 setError("")
                 const res = await fetch(
-                    `http://www.omdbapi.com/?apikey=${API_KEY}&i=${movie}`
+                    `https://www.omdbapi.com/?apikey=${API_KEY}&i=${movie}`
                 )
 
                 if (!res.ok) {

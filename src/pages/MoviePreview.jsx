@@ -17,7 +17,7 @@ function MoviePreview() {
             try {
                 setError("")
                 const res = await fetch(
-                    `http://www.omdbapi.com/?apikey=${API_KEY}&i=${imdbID}`
+                    `https://www.omdbapi.com/?apikey=${API_KEY}&i=${imdbID}`
                 )
 
                 if (!res.ok) {

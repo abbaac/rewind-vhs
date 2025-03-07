@@ -18,7 +18,7 @@ function TrendingCarousel({ movies }) {
                 // Fetch OMDb details
                 const omdbRequests = movies.map((movie) =>
                     fetch(
-                        `http://www.omdbapi.com/?apikey=${API_KEY}&i=${movie}`
+                        `https://www.omdbapi.com/?apikey=${API_KEY}&i=${movie}`
                     ).then((res) => {
                         if (!res.ok)
                             throw new Error("Failed to fetch OMDb data")
