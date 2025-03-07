@@ -18,7 +18,7 @@ function SearchBar() {
                 setError("")
                 setIsLoading(true)
                 const res = await fetch(
-                    `http://www.omdbapi.com/?apikey=${API_KEY}&s=${searchQuery}`,
+                    `https://www.omdbapi.com/?apikey=${API_KEY}&s=${searchQuery}`,
                     { signal: controller.signal }
                 )
 
