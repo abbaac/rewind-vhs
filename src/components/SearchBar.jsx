@@ -82,7 +82,7 @@ function SearchBar() {
                 />
             </div>
             {displayResults && (
-                <div className="absolute top-0 left-0 mt-14 flex h-fit max-h-80 w-full flex-col divide-y-2 divide-black overflow-y-auto rounded-b-md border-x-2 border-b-2 border-white bg-gray-100 text-black xl:mt-0 xl:mt-9 xl:max-h-96">
+                <div className="absolute top-0 left-0 mt-14 flex h-fit max-h-80 w-full flex-col divide-y-2 divide-black overflow-y-auto rounded-b-md border-x-2 border-b-2 border-white bg-gray-100 text-black xl:mt-9 xl:max-h-96">
                     {isLoading && (
                         <div className="flex h-fit w-full shrink-0 flex-row p-2">
                             <span> Loading</span>

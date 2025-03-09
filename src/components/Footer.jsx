@@ -9,7 +9,7 @@ import { FaXTwitter } from "react-icons/fa6"
 
 function Footer() {
     return (
-        <footer className="flex flex-col items-center justify-center space-y-9 border-t-2 py-12 font-bold">
+        <footer className="flex flex-col items-center justify-center space-y-4 border-t-2 py-4 font-bold xl:space-y-12 xl:py-8">
             <div className="flex flex-row space-x-12">
                 <FaFacebookSquare size={"24"} />
                 <FaInstagram size={"24"} />

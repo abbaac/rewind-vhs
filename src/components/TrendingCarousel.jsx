@@ -4,6 +4,7 @@ import play_icon from "/Play.svg"
 import { useEffect, useState } from "react"
 import axios from "axios"
 import { getImdbRating, getRottenTomatoesRating } from "../utils/helpers"
+import { NavLink } from "react-router-dom"
 
 function TrendingCarousel({ movies }) {
     const [index, setIndex] = useState(2)
@@ -82,7 +83,10 @@ function TrendingCarousel({ movies }) {
                 backgroundColor: "rgba(0, 0, 0, 0.5)",
             }}
         >
-            <div className="line-clamp-3 flex max-w-72 flex-col space-y-4 text-white xl:max-w-[450px]">
+            <NavLink
+                to={`/content/${movieDetails[index]?.imdbID}`}
+                className="line-clamp-3 flex max-w-72 flex-col space-y-4 text-white xl:max-w-[450px]"
+            >
                 <span className="text-xl font-bold xl:text-5xl">
                     {movieDetails[index]?.Title}
                 </span>
@@ -113,7 +117,7 @@ function TrendingCarousel({ movies }) {
                         Watch trailer
                     </span>
                 </button>
-            </div>
+            </NavLink>
             <div className="flex flex-col text-white">
                 {Array.from({ length: movieDetails.length }, (_, i) => i).map(
                     (i) => (
