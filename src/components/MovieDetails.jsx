@@ -13,6 +13,17 @@ function MovieDetails({ Movie }) {
         Poster,
     } = Movie
 
+    const mediaDetails = [
+        "Country",
+        "Genre",
+        "Language",
+        "Rated",
+        "Released",
+        "Runtime",
+    ]
+
+    const filmCrew = ["Actors", "Director", "Writer", "Awards"]
+
     return (
         <div className="flex h-full w-full flex-row justify-between xl:flex-row">
             <div className="flex w-3/5 flex-col space-y-4">
@@ -53,13 +64,13 @@ function MovieDetails({ Movie }) {
 
                 <div className="flex flex-col space-y-2 text-xs xl:text-base">
                     <span className="font-bold">
-                        Director:{" "}
+                        Director:
                         <span className="font-medium">{Director}</span>
                     </span>
                     <span className="font-bold">
                         Writer: <span className="font-medium">{Writer}</span>
                     </span>
-                    <span className="w-1/2 font-bold text-wrap xl:w-full">
+                    <span className="font-bold">
                         Awards: <span className="font-medium">{Awards}</span>
                     </span>
                 </div>
@@ -69,48 +80,17 @@ function MovieDetails({ Movie }) {
                 <span className="font mb-3 font-bold xl:text-3xl">
                     Media Details
                 </span>
-
-                <div className="flex w-full flex-col items-end text-xs xl:text-base">
-                    <span className="font-bold">Runtime</span>
-                    <span className="w-full text-right font-medium text-gray-500">
-                        {Runtime}
-                    </span>
-                </div>
-
-                <div className="flex w-full flex-col items-end text-xs xl:text-base">
-                    <span className="font-bold">Rated</span>
-                    <span className="w-full text-right font-medium text-gray-500">
-                        {Rated}
-                    </span>
-                </div>
-
-                <div className="flex w-full flex-col items-end text-xs xl:text-base">
-                    <span className="font-bold">Genre</span>
-                    <span className="w-full text-right font-medium text-gray-500">
-                        {Genre}
-                    </span>
-                </div>
-
-                <div className="flex w-full flex-col items-end text-xs xl:text-base">
-                    <span className="font-bold">Language</span>
-                    <span className="w-full text-right font-medium text-gray-500">
-                        {Language}
-                    </span>
-                </div>
-
-                <div className="flex w-full flex-col items-end text-xs xl:text-base">
-                    <span className="font-bold">Released</span>
-                    <span className="w-full text-right font-medium text-gray-500">
-                        {Released}
-                    </span>
-                </div>
-
-                <div className="flex w-full flex-col items-end text-xs xl:text-base">
-                    <span className="font-bold">Country</span>
-                    <span className="w-full text-right font-medium text-gray-500">
-                        {Country}
-                    </span>
-                </div>
+                {mediaDetails.map((objectKey) => (
+                    <div
+                        className="flex w-full flex-col items-end text-xs xl:text-base"
+                        key={objectKey}
+                    >
+                        <span className="font-bold">{objectKey}</span>
+                        <span className="w-full text-right font-medium text-gray-500">
+                            {Movie[objectKey]}
+                        </span>
+                    </div>
+                ))}
             </div>
         </div>
     )

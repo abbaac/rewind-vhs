@@ -41,26 +41,6 @@ function MoviePreview() {
         : null
 
     const ratings = { imdbRating, rottenTomatoesRating }
-
-    const {
-        Title,
-        Year,
-        Poster,
-        Plot,
-        Director,
-        Writer,
-        Actors,
-        Rated,
-        Released,
-        Runtime,
-        Genre,
-        Language,
-        Country,
-        Awards,
-        Type,
-        totalSeasons,
-    } = movieData
-
     return (
         <div className="flex w-full flex-col pb-10">
             <MovieHeader Movie={movieData} ratings={ratings} />
