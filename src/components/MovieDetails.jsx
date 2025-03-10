@@ -4,6 +4,7 @@ function MovieDetails({ Movie }) {
         Director,
         Writer,
         Awards,
+        Plot,
         Country,
         Genre,
         Language,
@@ -25,17 +26,21 @@ function MovieDetails({ Movie }) {
     const filmCrew = ["Actors", "Director", "Writer", "Awards"]
 
     return (
-        <div className="flex h-full w-full flex-row justify-between xl:flex-row">
+        <div className="flex h-full w-full flex-row justify-between gap-6 xl:flex-row">
             <div className="flex w-3/5 flex-col space-y-4">
+                <span className="font mb-3 font-bold xl:text-3xl">Plot </span>
+                <div className="w-full overflow-y-auto text-start text-xs font-medium xl:text-base">
+                    {Plot}
+                </div>
                 <div className="flex w-full flex-col space-y-2">
                     <span className="font mb-3 font-bold xl:text-3xl">
-                        Popular Cast Members
+                        Cast Members
                     </span>
-                    <div className="flex w-full flex-row space-x-2 overflow-x-auto">
+                    <div className="flex w-full flex-row space-x-2 overflow-x-auto py-1">
                         {Actors?.split(",").map((actor, index) => (
                             <div
                                 key={index}
-                                className="flex h-44 w-26 shrink-0 flex-col rounded-lg shadow-xl xl:h-60 xl:w-40"
+                                className="flex h-44 w-26 shrink-0 flex-col rounded-lg shadow-lg xl:h-60 xl:w-40"
                             >
                                 <div
                                     className="h-3/4 rounded-t-md"
@@ -64,7 +69,7 @@ function MovieDetails({ Movie }) {
 
                 <div className="flex flex-col space-y-2 text-xs xl:text-base">
                     <span className="font-bold">
-                        Director:
+                        Director:{" "}
                         <span className="font-medium">{Director}</span>
                     </span>
                     <span className="font-bold">
@@ -75,9 +80,8 @@ function MovieDetails({ Movie }) {
                     </span>
                 </div>
             </div>
-
             <div className="flex w-2/5 flex-col items-end space-y-2">
-                <span className="font mb-3 font-bold xl:text-3xl">
+                <span className="font mb-3 text-end font-bold xl:text-3xl">
                     Media Details
                 </span>
                 {mediaDetails.map((objectKey) => (

@@ -56,10 +56,10 @@ function SearchBar() {
     }, [searchQuery])
 
     return (
-        <div className="h-full w-52 xl:relative xl:h-9 xl:w-[525px]">
+        <div className="flex h-full w-42 flex-row justify-end md:w-68 lg:relative lg:h-9 lg:w-96 xl:w-[525px]">
             <div
-                className={`flex h-full w-full cursor-text flex-row items-center space-x-1 xl:space-x-2 xl:border-2 xl:px-2.5 xl:py-1 ${
-                    displayResults ? "xl:rounded-t-md" : "xl:rounded-md"
+                className={`flex h-full w-full cursor-text flex-row items-center space-x-1 lg:space-x-2 lg:border-2 lg:px-2.5 lg:py-1 ${
+                    displayResults ? "lg:rounded-t-md" : "lg:rounded-md"
                 }`}
             >
                 {searchQuery ? (
@@ -67,14 +67,14 @@ function SearchBar() {
                         onClick={() => {
                             setSearchQuery("")
                         }}
-                        className="h-full cursor-pointer xl:size-6"
+                        className="h-full cursor-pointer md:size-6"
                     />
                 ) : (
-                    <HiOutlineSearch className="h-full xl:size-6" />
+                    <HiOutlineSearch className="h-full md:size-6" />
                 )}
                 <input
                     placeholder="What are you watching?"
-                    className="text-md h-full w-full outline-0"
+                    className="h-full w-full text-xs outline-0 md:text-base"
                     value={searchQuery}
                     onChange={(e) => {
                         setSearchQuery(e.target.value)
@@ -82,7 +82,7 @@ function SearchBar() {
                 />
             </div>
             {displayResults && (
-                <div className="absolute top-0 left-0 mt-14 flex h-fit max-h-80 w-full flex-col divide-y-2 divide-black overflow-y-auto rounded-b-md border-x-2 border-b-2 border-white bg-gray-100 text-black xl:mt-9 xl:max-h-96">
+                <div className="absolute top-0 left-0 mt-14 flex h-fit max-h-80 w-full flex-col divide-y-2 divide-black overflow-y-auto rounded-b-md border-x-2 border-b-2 border-white bg-gray-100 text-black lg:mt-9 lg:max-h-96">
                     {isLoading && (
                         <div className="flex h-fit w-full shrink-0 flex-row p-2">
                             <span> Loading</span>
