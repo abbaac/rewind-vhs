@@ -56,9 +56,9 @@ function SearchBar() {
     }, [searchQuery])
 
     return (
-        <div className="flex h-full w-42 flex-row justify-end md:w-68 lg:relative lg:h-9 lg:w-96 xl:w-[525px]">
+        <div className="flex h-full w-38 flex-row justify-end md:w-68 lg:relative lg:h-9 lg:w-96 xl:w-[525px]">
             <div
-                className={`flex h-full w-full cursor-text flex-row items-center space-x-1 lg:space-x-2 lg:border-2 lg:px-2.5 lg:py-1 ${
+                className={`flex h-full w-full cursor-text flex-row items-center justify-end space-x-1 lg:space-x-2 lg:border-2 lg:px-2.5 lg:py-1 ${
                     displayResults ? "lg:rounded-t-md" : "lg:rounded-md"
                 }`}
             >

@@ -87,11 +87,11 @@ function TrendingCarousel({ movies }) {
                 to={`/content/${movieDetails[index]?.imdbID}`}
                 className="line-clamp-3 flex max-w-72 flex-col space-y-4 text-white xl:max-w-[450px]"
             >
-                <span className="text-xl font-bold xl:text-5xl">
+                <span className="text-3xl font-bold xl:text-5xl">
                     {movieDetails[index]?.Title}
                 </span>
                 {(imdbRating || rottenTomatoesRating) && (
-                    <div className="flex space-x-10 text-base xl:text-lg">
+                    <div className="flex space-x-10 text-sm xl:text-lg">
                         {imdbRating && (
                             <div className="flex space-x-2">
                                 <img src={imdb_logo} />
@@ -106,12 +106,13 @@ function TrendingCarousel({ movies }) {
                         )}
                     </div>
                 )}
-                <div>
-                    <span className="line-clamp-4 text-base font-medium">
+                <div className="w-2/3">
+                    <span className="line-clamp-4 text-sm font-medium xl:text-base">
                         {movieDetails[index]?.Plot}
                     </span>
                 </div>
-                <button className="flex h-9 w-fit cursor-pointer flex-row items-center justify-between space-x-2 rounded-md bg-rose-700 px-4 py-1.5">
+                {/* <button className="flex h-9 w-fit cursor-pointer flex-row items-center justify-between space-x-2 rounded-md bg-rose-700 px-4 py-1.5"> */}
+                <button className="flex h-8 w-fit cursor-pointer flex-row items-center justify-between space-x-2 rounded-sm bg-rose-700 px-2 py-2 md:h-9 md:rounded-md md:px-4 md:py-1.5">
                     <img src={play_icon}></img>
                     <span className="font-bold text-white uppercase">
                         Watch trailer
