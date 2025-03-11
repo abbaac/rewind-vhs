@@ -74,7 +74,7 @@ function TrendingCarousel({ movies }) {
 
     return (
         <div
-            className="flex h-[500px] flex-row items-center justify-between px-4 xl:h-[600px] xl:px-24"
+            className="flex h-[500px] flex-row items-center justify-between px-4 md:px-6 lg:px-12 xl:h-[600px]"
             style={{
                 backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), 
                             url(https://image.tmdb.org/t/p/original${backdrops[index]})`,
@@ -85,13 +85,13 @@ function TrendingCarousel({ movies }) {
         >
             <NavLink
                 to={`/content/${movieDetails[index]?.imdbID}`}
-                className="line-clamp-3 flex max-w-72 flex-col space-y-4 text-white xl:max-w-[450px]"
+                className="line-clamp-3 flex max-w-72 flex-col space-y-4 text-white lg:max-w-[450px]"
             >
-                <span className="text-3xl font-bold xl:text-5xl">
+                <span className="w-3/4 text-3xl font-bold md:w-full lg:text-5xl">
                     {movieDetails[index]?.Title}
                 </span>
                 {(imdbRating || rottenTomatoesRating) && (
-                    <div className="flex space-x-10 text-sm xl:text-lg">
+                    <div className="flex w-3/4 space-x-10 text-sm md:w-full lg:text-lg">
                         {imdbRating && (
                             <div className="flex space-x-2">
                                 <img src={imdb_logo} />
@@ -106,8 +106,8 @@ function TrendingCarousel({ movies }) {
                         )}
                     </div>
                 )}
-                <div className="w-2/3">
-                    <span className="line-clamp-4 text-sm font-medium xl:text-base">
+                <div className="w-3/4 md:w-full">
+                    <span className="line-clamp-4 text-xs font-medium lg:text-base">
                         {movieDetails[index]?.Plot}
                     </span>
                 </div>
@@ -119,7 +119,7 @@ function TrendingCarousel({ movies }) {
                     </span>
                 </button>
             </NavLink>
-            <div className="flex flex-col text-white">
+            <div className="flex flex-col text-xs text-white md:text-base">
                 {Array.from({ length: movieDetails.length }, (_, i) => i).map(
                     (i) => (
                         <div
@@ -128,7 +128,7 @@ function TrendingCarousel({ movies }) {
                             key={i}
                         >
                             {index === i && (
-                                <div className="h-[2.5px] w-3 bg-white" />
+                                <div className="h-[1px] w-2 bg-white md:h-[2px] md:w-3" />
                             )}
                             <div className="flex w-5 flex-row items-center justify-center space-x-2 font-medium">
                                 {i + 1}

@@ -44,7 +44,7 @@ function MoviePreview() {
     return (
         <div className="flex w-full flex-col pb-10">
             <MovieHeader Movie={movieData} ratings={ratings} />
-            <div className="flex w-full flex-col space-y-4 px-4 py-4 xl:px-24">
+            <div className="flex w-full flex-col space-y-4 px-4 py-4 lg:px-12">
                 <MovieDetails Movie={movieData} />
                 <MovieExtras Movie={movieData} ratings={ratings} />
             </div>

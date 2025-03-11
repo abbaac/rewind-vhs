@@ -4,7 +4,7 @@ import { NavLink } from "react-router-dom"
 
 function Header() {
     return (
-        <header className="absolute flex h-14 w-full flex-row items-center justify-between border-b-2 px-4 py-3.5 text-white lg:px-12 lg:py-3.5 xl:h-20">
+        <header className="absolute flex h-14 w-full flex-row items-center justify-between border-b-2 px-4 py-3.5 text-white md:px-6 lg:px-12 lg:py-3.5 xl:h-20">
             <NavLink className="flex h-full items-center space-x-2" to={"/"}>
                 <img src={Logo} className="size-full xl:size-12" />
                 <span className="text-xs font-bold md:text-base xl:text-2xl">
